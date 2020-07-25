@@ -12,7 +12,7 @@ pipeline {
 		   script {
                       def dockerHome = tool 'myDocker'
                       env.PATH = "${dockerHome}/bin:${env.PATH}"
-	              eval "$(docker-machine env default)"		   
+	              docker-machine restart		   
                              
 	           }	
 		}	  
