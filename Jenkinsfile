@@ -2,7 +2,8 @@ pipeline {
     agent any
 	
     environment {
-        echo "set env"
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
 	
     stages {
