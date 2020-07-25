@@ -1,5 +1,10 @@
 pipeline {
     agent any
+	
+    environment {
+        echo "set env"
+    }
+	
     stages {
 	 
 	    
