@@ -8,7 +8,9 @@ pipeline {
     stages {
 	 
 	stage('Initialize'){
+		steps {		
               echo " here"
+		}	  
         }    
 	    
         stage('One') {
