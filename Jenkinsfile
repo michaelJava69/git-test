@@ -31,6 +31,10 @@ pipeline {
                                 }
                         }
                         stage('Integration test') {
+				
+			def dockerHome = tool 'myDocker'
+                        env.PATH = "${dockerHome}/bin:${env.PATH}"	
+				
                         agent {
                                 docker {
                                         reuseNode false
