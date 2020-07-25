@@ -9,7 +9,10 @@ pipeline {
 	 
 	stage('Initialize'){
 		steps {		
-              echo " here"
+                
+                   def dockerHome = tool 'myDocker'
+                   env.PATH = "${dockerHome}/bin:${env.PATH}"                
+			
 		}	  
         }    
 	    
