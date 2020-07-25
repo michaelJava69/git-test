@@ -51,10 +51,11 @@ pipeline {
                         stage('Integration test') {
 	                
                         agent {
-                                docker {
-                                        reuseNode false
-					image 'ubuntu'
-                                        }
+				docker .withServerr('tcp://3.8.215.135:8080') {
+					docker .image('ubuntu'){
+					}
+				}
+                                
 			}
 				steps {
 					echo 'Running the integration test..'
